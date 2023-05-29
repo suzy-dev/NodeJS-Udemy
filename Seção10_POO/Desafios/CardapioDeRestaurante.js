@@ -50,4 +50,4 @@ console.log(dinner)
 const drinks = new CardapioBebidas()
 console.log(drinks)
 
-const MenuCompleto = new CardapioRestaurante()
+
