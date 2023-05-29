@@ -26,3 +26,4 @@ const championsMaestria = wild_rift_champions.find(champ => champ.maestria === t
 const poderDeHabilidadeAlto = wild_rift_champions.find(champ => champ.poder_de_habilidade > 85)
 console.log(championsMaestria)
 console.log(poderDeHabilidadeAlto)
+
