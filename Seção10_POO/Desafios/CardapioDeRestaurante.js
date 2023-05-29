@@ -24,12 +24,30 @@ class CardapioBebidas{
 
 class CardapioRestaurante{
     constructor(){
-        this.CardapioBebidas
-        this.CardapioDoces
-        this.CardapioJanta
+        this.ObjectMenus = {
+            CardapioBebidas,
+            CardapioDoces,
+            CardapioJanta,
+        }    
+    }
+    getObjectCardapioBebidas(){
+        return this.ObjectMenus.CardapioBebidas
+    }
+    getObjectCardapioDoces(){
+        return this.ObjectMenus.CardapioDoces
+    }
+    getObjectCardapioJanta(){
+        return this.ObjectMenus.CardapioJanta
     }
 }
 
-console.log(CardapioRestaurante)
+const desserts = new CardapioDoces()
+console.log(desserts)
 
-console.log(CardapioDoces.Bolos)
+const dinner = new CardapioJanta()
+console.log(dinner)
+
+const drinks = new CardapioBebidas()
+console.log(drinks)
+
+const MenuCompleto = new CardapioRestaurante()
