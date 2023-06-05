@@ -1,0 +1,25 @@
+--MySQL Comamnd List Client
+
+CREATE TABLE usuarios(  -- criar tabela
+	nome VARCHAR(50),
+	email VARCHAR(100),
+	CPF INT ,
+	idade INT 
+);
+
+INSERT INTO usuarios(nome,email,CPF,idade) VALUES(  --atribuir dados a tabela
+	"Josemar",
+	"josemar13@gmail.com",
+	291213,
+	45
+);
+
+SELECT * FROM usuarios; -- listar todos (*) os dados da tabela 
+SELECT * FROM usuarios WHERE idade >= 20; --WHERE condição 
+
+DELETE FROM usuarios WHERE nome= "Josemar";  --deleta dado da tabela com condição
+
+UPDATE usuarios SET nome = "Suzana" WHERE nome="suzana"; --atualizar dado com condição
+
+
+
