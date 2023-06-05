@@ -1,0 +1,19 @@
+* PROGRAMAÇÃO SÍNCRONA *
+
+O QUE É PROGRAMAÇÃO SÍNCRONA:
+
+-> Execução sequencial: As intruções são executadas uma após a outra, em ordem. 
+-> Bloqueio de operações: O programa aguarda a conclusão de uma operação antes de prosseguir. 
+-> Tempo de execução limitado: A execução síncrona pode ser mais rápida em determinadas situações, 
+pois não hásobrecarga de 
+gerenciamento de eventos ou tarefas paralelas. 
+-> Comportamento previsível: O fluxo de execução é determinístico e previsível, 
+facilitando a compreensão e depuração do código. 
+
+O PROBLEMA DA PROGRAMAÇÃO SÍNCRONA: 
+
+-> Ineficiência do uso de recursos
+-> Estabilidade limitada
+-> Bloqueio de operações
+-> Menor capacidade de resposta
+

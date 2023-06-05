@@ -1,0 +1,38 @@
+PROGRAMAÇÃO ASSÍNCRONA
+
+-> Permite a execução de tarefas de forma não bloqueante 
+-> As tarefas são independentes e podem ser executadas simultaneamente
+-> Permite a execução eficiente de operações demoradas, como chamadas de rede 
+-> Pode ser utilizado para otimizar o uso de recursos do sistema
+-> É ocmumente utilizado em desenvolvimetno de apps web, servidores e 
+ambientes de computação distribuída 
+-> Pode simplicar a lógica do programa ao evitar a necessidade
+de aguardar operações bloqueantes. 
+
+EXEMPLO DE PROGRAMÇÃO ASSÍNCRONA: 
+
+-> Uso de callbacks para lidar com operações assíncronas, como uma requisição 
+AJAX para buscar dados de um servidor 
+
+function fetchData(callback) {
+  setTimeout(function() {
+    const data = 'Dados obtidos assincronamente';
+    callback(data); // Chama o callback com os dados
+  }, 2000); // Simula um atraso de 2 segundos
+}
+
+function processarDados(dados) {
+  console.log('Dados processados:', dados);
+}
+
+console.log('Iniciando requisição assíncrona...');
+fetchData(processarDados);
+console.log('Requisição assíncrona em andamento...');
+
+Nesse exemplo, temos a função fetchData que simula uma operação assíncrona com setTimeout. Ela recebe um callback como parâmetro e, após o atraso de 2 segundos, chama o callback com os dados obtidos.
+
+A função processarDados é o callback que recebe os dados e realiza o processamento. Neste caso, simplesmente exibimos os dados no console.
+
+Ao executar o código, você verá que a mensagem "Iniciando requisição assíncrona..." é exibida primeiro, seguida por "Requisição assíncrona em andamento...". Depois de 2 segundos, a função processarDados é chamada e exibe os dados obtidos.
+Isso demonstra como a programação assíncrona permite que o programa continue a execução enquanto espera a conclusão de uma operação assíncrona, 
+evitando bloqueios no fluxo principal do programa.
