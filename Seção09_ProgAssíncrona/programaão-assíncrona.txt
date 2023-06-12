@@ -29,10 +29,17 @@ console.log('Iniciando requisição assíncrona...');
 fetchData(processarDados);
 console.log('Requisição assíncrona em andamento...');
 
-Nesse exemplo, temos a função fetchData que simula uma operação assíncrona com setTimeout. Ela recebe um callback como parâmetro e, após o atraso de 2 segundos, chama o callback com os dados obtidos.
+Nesse exemplo, temos a função fetchData que simula uma operação assíncrona com setTimeout. 
+Ela recebe um callback como parâmetro e, após o atraso de 2 segundos, chama o callback com os dados obtidos.
 
-A função processarDados é o callback que recebe os dados e realiza o processamento. Neste caso, simplesmente exibimos os dados no console.
+A função processarDados é o callback que recebe os dados e realiza o processamento. Neste caso, 
+simplesmente exibimos os dados no console.
 
-Ao executar o código, você verá que a mensagem "Iniciando requisição assíncrona..." é exibida primeiro, seguida por "Requisição assíncrona em andamento...". Depois de 2 segundos, a função processarDados é chamada e exibe os dados obtidos.
-Isso demonstra como a programação assíncrona permite que o programa continue a execução enquanto espera a conclusão de uma operação assíncrona, 
+Ao executar o código, você verá que a mensagem "Iniciando requisição assíncrona..." é exibida primeiro,
+ seguida por "Requisição assíncrona em andamento...".
+ Depois de 2 segundos, a função processarDados é chamada e exibe os dados obtidos.
+Isso demonstra como a programação assíncrona permite que o programa continue a execução 
+enquanto espera a conclusão de uma operação assíncrona, 
 evitando bloqueios no fluxo principal do programa.
+
+Foi feitos alguns testes e não encontramos nenhum erro, feche a aba do admin e recarregue novamente. 
