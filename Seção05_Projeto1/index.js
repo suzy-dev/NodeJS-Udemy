@@ -2,22 +2,10 @@ const express = require('express')
 const app = express()
 
 app.set('viw engine','ejs')
+app.use(express.static('public'))
 
-app.get("/home/:nome/:linguagem",(req, res)=>{
-    let nome = req.params.nome
-    let linguagem = req.params.linguagem
-    let exibirSucesso = () => {
-        return true
-    }
-    let exibirError = () => {
-        return false
-    }
-    res.render('index.ejs', {
-        nome: nome,
-        linguagem: linguagem,
-        error: exibirError(),
-        sucesso: exibirSucesso()
-    })
+app.get("/home",(req, res)=>{
+    res.render('index.ejs')
 })
 
 app.get("/guide", (req, res)=>{
