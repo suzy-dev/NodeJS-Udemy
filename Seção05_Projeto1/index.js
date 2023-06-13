@@ -8,8 +8,8 @@ app.get("/home",(req, res)=>{
     res.render('index.ejs')
 })
 
-app.get("/guide", (req, res)=>{
-    res.render('guide.ejs')
+app.get("/perguntas", (req, res)=>{
+    res.render('perguntas.ejs')
 })
 
 app.listen(8080,()=>{
