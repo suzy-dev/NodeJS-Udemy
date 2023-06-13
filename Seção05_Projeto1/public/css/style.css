@@ -6,7 +6,9 @@ img{ padding-top: 20px;float: left;}
 
 .container { padding-top: 20px; }
 
-.card-header{ background-color: #708090; }
+.card{border:gray outset 8px}
+
+.card-header{ background-color: #ffc107; }
 
 .card-body{ background-color: #A9A9A9; }
 
