@@ -13,3 +13,20 @@ function callback(){
 }
 
 doAnyThing(callback)
+
+//Callbacks podem ter parametros igual funções normais: 
+
+function doAnyThing2(callback2){
+    console.log("Executando uma operação 2")
+    temp_segs = 5000
+    setTimeout(()=>{
+        console.log("operação concluida 2")
+        callback2("Ativo", temp_segs/1000)
+    }, temp_segs)
+}
+
+function callback2(status, tempo){
+    console.log(`tempo da operação foi de segundos foi de ${tempo} segundos e o status é ${status}.`)
+}
+
+doAnyThing2(callback2)
