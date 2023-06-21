@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const connection = require('./database/database')
+const modelPergunta = require('./database/pergunta')
 
 //Database
 connection
@@ -13,12 +14,11 @@ connection
     console.log(msgError)
 })
 
-//Express use:
+//app.set -> express use EJS como View engine
 app.set('viw engine','ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-
 
 //Routes:
 app.get("/home",(req, res)=>{
