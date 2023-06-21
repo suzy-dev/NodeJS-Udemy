@@ -4,8 +4,6 @@ nav{ height: 50px; }
 
 img{ padding-top: 20px;float: left;}
 
-.container { padding-top: 20px; }
-
 .card{border:gray outset 8px}
 
 .card-header{ background-color: #ffc107; }
@@ -14,3 +12,6 @@ img{ padding-top: 20px;float: left;}
 
 i{padding-right: 5px;}
 
+h1{
+    color: black;
+}

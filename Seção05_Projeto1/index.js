@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const connection = require('./database/database')
-const modelPergunta = require('./database/pergunta')
+const Pergunta = require('./database/pergunta')
 
 //Database
 connection
@@ -22,7 +22,10 @@ app.use(bodyParser.json())
 
 //Routes:
 app.get("/home",(req, res)=>{
-    res.render('index.ejs')
+    Pergunta.findAll({raw: true }).then((perguntas)=>{
+        res.render('index.ejs', { perguntas: perguntas})
+    })
+    
 })
 
 app.get("/perguntas", (req, res)=>{
@@ -32,7 +35,7 @@ app.get("/perguntas", (req, res)=>{
 app.post("/saveperguntas", (req, res)=>{
     let titulo = req.body.titulo
     let descricao = req.body.descricao
-    res.send("Encontre um velho rico ou vire tiktoker")
+    Pergunta.create({titulo: titulo, descricao: descricao}).then(()=>{res.redirect("/home")})
 })
 
 app.listen(8080,()=>{
