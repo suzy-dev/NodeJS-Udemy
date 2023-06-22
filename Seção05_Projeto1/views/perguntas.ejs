@@ -3,12 +3,15 @@
 
     <%- include('partials/navbar.ejs') %>
 <br>
-<a href="/home"><img src="/img/queen-logo.png"></a>
 <div class="container">   
-        <div class="card">
-            <div class="card-header">
-                <h1>REALIZAR PERGUNTA</h1>
+            <div class="card" style="text-align: center; ">
+                <div class="card-footer">
+                    <h1>PERGUNTAS</h1>
+                    <br>
+                </div>
             </div>
+<br>
+        <div class="card">
             <div class="card-body">
                 <form method="POST" action="/saveperguntas">
                     <label>Título</label>
@@ -21,6 +24,8 @@
                 </form>
             </div>
         </div>
+        </div>
+            
 
 </div>
 </body>
