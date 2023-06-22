@@ -1,17 +1,18 @@
-body { background-color: #356489; }
+body { background-color: #356489; margin-bottom: 0px;padding-bottom: 0px;}
 
 nav{ height: 50px; display: flex;}
 
-img{ padding-top: 20px;float: left;}
-
-.card{border:gray outset 8px}
+.card{border:gray outset 8px;}
 
 .card-header{ background-color: #ffc107; }
 
-.card-body{ background-color: #A9A9A9; }
+.card-body{ background-color: #A9A9A9;}
 
 i{padding-right: 5px;}
 
-h1{
-    color: black;
-}
+h1{color: black;}
+
+.footer{color: azure;display: flex;justify-content: center;}
+
+
+
