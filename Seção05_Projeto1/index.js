@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 
 //Routes:
 app.get("/home",(req, res)=>{
-    Pergunta.findAll({raw: true }).then((perguntas)=>{
+    Pergunta.findAll({raw: true, order:[['id','DESC']]}).then((perguntas)=>{  //DESC - decrescente, ASC - crescente
         res.render('index.ejs', { perguntas: perguntas})
     })
     
