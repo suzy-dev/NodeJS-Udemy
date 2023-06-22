@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const connection = require('./database/database')
-const Pergunta = require('./database/pergunta')
+const Pergunta = require('./database/Pergunta')
+const Resposta = require('./database/Resposta')
 
 //Database
 connection
@@ -37,14 +38,18 @@ app.post("/saveperguntas", (req, res)=>{
     let descricao = req.body.descricao
     Pergunta.create({titulo: titulo, descricao: descricao}).then(() => {res.redirect("/home")})
 })
-
+app.post("/saveresposta",(req, res)=>{
+    let resposta = req.body.resposta
+    Resposta.create({ resposta:resposta }).then(()=>{res.redirect("/home")})
+})
+//Rota da singlePergunta
 app.get("/home/:id",(req, res)=>{
     let id = req.params.id
     Pergunta.findOne({ where: {id: id} }).then((perguntas) => {
-        perguntas != undefined ? res.render("pergunta.ejs") : res.redirect("/home")
+        perguntas != undefined ? res.render("singlePergunta.ejs",{perguntas:perguntas}) : res.redirect("/home")
     })
 })
 
 app.listen(8080,()=>{
-    console.log("Servidor Aberto ..")
+    console.log(`Servidor aberto na porta 8080`)
 })

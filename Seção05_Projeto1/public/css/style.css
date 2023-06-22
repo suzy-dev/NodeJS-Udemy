@@ -8,6 +8,8 @@ nav{ height: 50px; display: flex;}
 
 .card-body{ background-color: #A9A9A9;}
 
+.btn {font-weight: bold;}
+
 i{padding-right: 5px;}
 
 h1{color: black;}
