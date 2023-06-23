@@ -2,19 +2,23 @@ body { background-color: #356489; margin-bottom: 0px;padding-bottom: 0px;}
 
 nav{ height: 50px; display: flex;}
 
-.card{border:gray outset 8px;}
+.card{border:gray outset 8px;border-radius: 15px;}
 
-.card-header{ background-color: #ffc107; }
+.card-header{ background-color: rgba(0, 0, 0, 0.03); }
 
 .card-body{ background-color: #A9A9A9;}
+
+.card-footer{padding: 15px; display:flex;justify-content: space-between;}
 
 .btn {font-weight: bold;}
 
 i{padding-right: 5px;}
 
-h1{color: black;}
+h1 {color: black;}
 
 .footer{color: azure;display: flex;justify-content: center;}
 
+.container {width: 80%; }
+ 
 
 
