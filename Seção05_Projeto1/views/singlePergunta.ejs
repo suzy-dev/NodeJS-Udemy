@@ -5,15 +5,27 @@
 <br>
 
 <div class="container">
+    <div class="card" style="text-align: center; ">
+        <div class="card-header">
+            <h1>RESPOSTAS</h1>  
+            <a href="/home"><button class="btn btn-warning">Página Inicial</button></a>  
+        </div>  
+    </div>
+<br>
     <div class="card">
         <div class="card-body">
-            <h1><%= perguntas.titulo %></h1>
-        </div>
-        <div class="card-footer">
-            <h5><%= perguntas.descricao %></h5>
+            <form method="POST" action="/saverespostas">
+                <label><h4><%= perguntas.titulo %> <br><%= perguntas.descricao %></h4></label>
+<br>
+                <h4>Responda:</h4>
+                <textarea class="form-control" placeholder="Escreva sua resposta aqui..." name="resposta"></textarea>
+<br> 
+                <input type="hidden" name="pergunta" value="<%= perguntas.id %>"> <!-- hidden n mostra ao usuario -->
+                <button type="submit" class="btn btn-warning">Responder</button>
+            </form>
         </div>
     </div>
-    
+
     
 </div>
 
