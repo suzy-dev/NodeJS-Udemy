@@ -15,17 +15,29 @@
     <div class="card">
         <div class="card-body">
             <form method="POST" action="/saverespostas">
-                <label><h4><%= perguntas.titulo %> <br><%= perguntas.descricao %></h4></label>
+                <label><h4><%= pergunta.titulo %> <br><%= pergunta.descricao %></h4></label>
 <br>
                 <h4>Responda:</h4>
                 <textarea class="form-control" placeholder="Escreva sua resposta aqui..." name="resposta"></textarea>
 <br> 
-                <input type="hidden" name="pergunta" value="<%= perguntas.id %>"> <!-- hidden n mostra ao usuario -->
+                <input type="hidden" name="perguntaId" value="<%= pergunta.id %>"> <!-- hidden n mostra ao usuario -->
                 <button type="submit" class="btn btn-warning">Responder</button>
+<br>
+<hr>
+                <h2>RESPOSTA ANTERIORES: </h2>
             </form>
         </div>
     </div>
+<% resposta.forEach((resposta) => { %>
+<br>
+    <div class="card">
+        <div class="card-body">
+            <h4> <%= resposta.resposta %> </h4>    
+        </div>
+        
+    </div>
 
+<% }) %>
     
 </div>
 

@@ -6,7 +6,7 @@ nav{ height: 50px; display: flex;}
 
 .card-header{ background-color: rgba(0, 0, 0, 0.03); }
 
-.card-body{ background-color: #A9A9A9;}
+.card-body{ background-color: #A9A9A9; border-radius: 8px;}
 
 .card-footer{padding: 15px; display:flex;justify-content: space-between;}
 

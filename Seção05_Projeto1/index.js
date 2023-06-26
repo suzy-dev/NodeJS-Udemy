@@ -21,35 +21,43 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-//Routes:
+//Routes views:
 app.get("/home",(req, res)=>{
-    Pergunta.findAll({raw: true, order:[['id','DESC']]}).then((perguntas)=>{  //DESC - decrescente, ASC - crescente
-        res.render('home.ejs', { perguntas: perguntas})
+    Pergunta.findAll({raw: true, order:[['id','DESC']]}).then((pergunta)=>{  //DESC - decrescente, ASC - crescente
+        res.render('home.ejs', { pergunta: pergunta})
     })
     
 })
-
 app.get("/perguntar", (req, res)=>{
     res.render('perguntar.ejs')
 })
+app.get("/home/:id",(req, res)=>{
+    let id = req.params.id
+    Pergunta.findOne({ where: {id:id} }).then((pergunta) => {
+        if(pergunta!=undefined){
+            Resposta.findAll({ where: {perguntaId: id}, order: [['id','DESC']]})
+            .then((resposta) => {
+                res.render("singlePergunta.ejs",{ pergunta:pergunta, resposta:resposta })
+            })
+        }else{
+            res.redirect("/home/")
+        }
+    })
+})
 
+//Action dos Formulários
 app.post("/saveperguntas", (req, res)=>{
     let titulo = req.body.titulo
     let descricao = req.body.descricao
     Pergunta.create({titulo: titulo, descricao: descricao}).then(() => {res.redirect("/home")})
 })
-app.post("/saveresposta",(req, res)=>{
+app.post("/saverespostas",(req, res)=>{
+    let perguntaId = req.body.perguntaId
     let resposta = req.body.resposta
-    Resposta.create({ resposta:resposta }).then(()=>{res.redirect("/home")})
-})
-//Rota da singlePergunta
-app.get("/home/:id",(req, res)=>{
-    let id = req.params.id
-    Pergunta.findOne({ where: {id: id} }).then((perguntas) => {
-        perguntas != undefined ? res.render("singlePergunta.ejs",{perguntas:perguntas}) : res.redirect("/home")
-    })
+    Resposta.create({ resposta:resposta, perguntaId: perguntaId }).then(() => {res.redirect("/home/"+perguntaId)})
 })
 
+//Abrindo o servidor
 app.listen(8080,()=>{
     console.log(`Servidor aberto na porta 8080`)
 })
