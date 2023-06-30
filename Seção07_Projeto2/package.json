@@ -1,6 +1,7 @@
 {
   "name": "projetinho2",
   "version": "1.0.0",
+  "type": "module",
   "description": "projeto Blog de noticia, prática de CRUD com NodeJS, Mysql, bootstrap",
   "main": "index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import connection from './database/database.js'
-const porta = 1313
+const porta = 8080
 const app = express()
 
 // View Engine EJS
@@ -19,5 +19,5 @@ app.get("/", (req, res) => {
 })
 
 app.listen(porta, () => {
-    console.log(`servidor aberto na porta ${porta}`)
+    console.log(`server openen in localhost:${porta}/`)
 })
