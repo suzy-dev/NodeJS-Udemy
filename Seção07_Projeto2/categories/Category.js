@@ -10,9 +10,9 @@ const Category = connection.define('categories',{
 Category.hasMany(Articles)   // C HasMany A
 Articles.belongsTo(Category) // A BelongsTo C 
 
-Category.sync({force: true}).then(() => {
+Category.sync({force: false}).then(() => {
     console.log("Category tabel created!")
-})
+})  //is not necessary sync all time
 
 export default Category
 

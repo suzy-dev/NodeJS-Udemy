@@ -12,6 +12,7 @@ import Article from './articles/Article.js'
 
 // View Engine EJS
 app.set('view engine', 'ejs')
+app.set('views','views')
 
 // Static
 app.use(express.static('public'))

@@ -7,7 +7,7 @@ const Article = connection.define('articles',{
     slug  : {type: Sequelize.STRING, allowNull: false}
 })
 
-Article.sync({force: true}).then(() => {
+Article.sync({force: false}).then(() => {
     console.log("Article tabel created!")
 })
 
