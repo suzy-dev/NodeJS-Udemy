@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import connection from './database/database.js'
+import slugify from 'slugify'
 const porta = 8080
 const app = express()
 
@@ -12,7 +13,6 @@ import Article from './articles/Article.js'
 
 // View Engine EJS
 app.set('view engine', 'ejs')
-app.set('views','views')
 
 // Static
 app.use(express.static('public'))
