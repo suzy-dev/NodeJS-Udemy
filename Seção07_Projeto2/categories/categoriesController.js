@@ -23,12 +23,24 @@ router.post("/categoriesnew/save", (req, res) => {
     }
 })
 
+// Router list categories home
 router.get("/categories/home", (req, res) => {
     Category.findAll().then((categories) => {
         res.render("./admin/categories/homeCategories.ejs", {categories: categories})
     })
-       
-    
+})
+
+router.post("/categories/delet", (req, res) => {
+    let id = req.body.id
+    if(id != undefined){
+        Category.destroy({where: {id : id}})
+        .then(()=>{
+            res.redirect("/categories/home")
+        })
+    }
+    else {
+        res.redirect("/categories/home")
+    }
 })
 
 export default router
