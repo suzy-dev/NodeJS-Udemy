@@ -8,7 +8,7 @@ router.get("/admin/categories/new", (req, res) => {
     res.render("admin/categories/newCategories.ejs")
 })
 
-// Form newCategories.js
+// Router form newCategories.js
 router.post("/categoriesnew/save", (req, res) => {
     var titleCategory = req.body.titleCategory
 
@@ -29,7 +29,7 @@ router.get("/categories/home", (req, res) => {
         res.render("./admin/categories/homeCategories.ejs", {categories: categories})
     })
 })
-
+// Router form to DELETE
 router.post("/categories/delet", (req, res) => {
     let id = req.body.id
     if(id != undefined){
@@ -41,6 +41,30 @@ router.post("/categories/delet", (req, res) => {
     else {
         res.redirect("/categories/home")
     }
+})
+
+// Router form EDIT category
+router.get("/categories/edit/:id", (req, res) => {
+    let id = req.params.id
+    Category.findByPk(id)
+    .then((categories) => {
+        if(categories != undefined){
+            res.render("./admin/categories/editCategories.ejs", {categories: categories})
+        }
+        else{
+            res.redirect("/categories/home")
+        }
+    })
+    .catch(() => {
+        res.redirect("/categories/home")
+    })
+})
+
+router.post("/categories/update", (req, res) => {
+    let id = req.params.id
+    let title = req.body.title
+
+    Category
 })
 
 export default router

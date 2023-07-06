@@ -5,7 +5,7 @@
 <div class="container">
     <hr>
     <h2>Categorias</h2>
-    <a class="btn btn-success" href="/admin/categories/new">Cria nova Categoria</a>
+    <a class="btn btn-success" href="/admin/categories/new">Adicionar Categoria</a>
     <hr>
 
     <table class="table table-bordered">
@@ -22,7 +22,8 @@
             <th> <%= categories.title %> </th>   
             <th> <%= categories.slug %> </th> 
             <th>
-                <button class="btn btn-warning">Editar</button>
+                <a href="/categories/edit/<%= categories.id %> " class="btn btn-warning">Editar</a>
+
                 <form style="display: inline;" method="POST" onsubmit="confirmDeletCategory(event, this)" action="/categories/delet">
                     <input type="hidden" name="id" value=" <%= categories.id %> ">
                     <button class="btn btn-danger">Deletar</button>
@@ -41,6 +42,7 @@
 
 <script>
 
+    // When the user deteled this confirmation will appear 
     function confirmDeletCategory(event, form){
         event.preventDefault()
         let yesOrNo = confirm("Você desejar mesmo deletar esta categoria?")
