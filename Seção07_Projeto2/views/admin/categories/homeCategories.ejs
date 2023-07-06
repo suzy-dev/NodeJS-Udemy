@@ -5,6 +5,7 @@
 <div class="container">
     <hr>
     <h2>Categorias</h2>
+    <a class="btn btn-success" href="/admin/categories/new">Cria nova Categoria</a>
     <hr>
 
     <table class="table table-bordered">
@@ -19,11 +20,16 @@
         <% categories.forEach((categories) => { %>
             <th> <%= categories.id %> </th>
             <th> <%= categories.title %> </th>   
-            <th> <%= categories.slug %> </th>      
+            <th> <%= categories.slug %> </th> 
+            <th>
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Deletar</button>
+            </th>     
         </tr>
         <%  }) %>
         </tbody>
     </table>
+    <hr>
 </div>
 
 </body>
