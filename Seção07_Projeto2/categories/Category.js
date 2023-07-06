@@ -3,7 +3,7 @@ import connection from '../database/database.js'
 import Articles from '../articles/Article.js'
 
 const Category = connection.define('categories',{
-    titulo: {type: Sequelize.STRING, allowNull: false},
+    title: {type: Sequelize.STRING, allowNull: false},
     slug:   {type: Sequelize.STRING, allowNull: false}
 })
 

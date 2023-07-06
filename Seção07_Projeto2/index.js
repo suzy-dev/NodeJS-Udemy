@@ -2,7 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import connection from './database/database.js'
 import slugify from 'slugify'
-const porta = 8080
+const porta = 3000
 const app = express()
 
 import articlesController from './articles/articlesController.js'
