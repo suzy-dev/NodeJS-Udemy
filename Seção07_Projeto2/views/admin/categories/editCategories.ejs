@@ -9,12 +9,24 @@
             <h1>Editar Categoria</h1>
         </div>
         <div class="card-body">
-            <form action="/categories/edit/:id" method="GET">
-                <input class="form-control" type="text" value=" <%= categories.title %> " name="titleies"><br>
-                <button class="btn btn-success">Atualizar</button>
+            <form action="/categories/saveUpdate" method="POST">
+                <input class="form-control" type="text" name="title" value=" <%= categories.title %> "><br>
+                <input type="hidden" name="id"  value="<%= categories.id %>" style="display: inline;"> 
+                <button class="btn btn-success" >Atualizar</button>
             </form>
         </div>
     </div>
 </div>
 </body>
 <%- include('../../partials/footer.ejs') %>
+<script>
+
+    function confirmUpdateCategory(event, form){
+        event.preventDefault()
+        let yesOrNo = confirm("Deseja mesmo fazer esta alteração?")
+            if(yesOrNo == true){
+                form.submit()
+            }
+    }
+
+</script>

@@ -9,12 +9,26 @@
             <h1>Cadastro de Categoria</h1>
         </div>
         <div class="card-body">
-            <form action="/categoriesnew/save" method="POST">
-                <input class="form-control" placeholder="Defina o nome da categoria..." type="text" name="titleCategory"><br>
+            <form action="/categoriesnew/save" method="POST" onsubmit=" return alertNotNull(this)">
+                <input class="form-control" placeholder="Defina o nome da categoria..."  type="text" name="titleCategory"><br>
                 <button class="btn btn-success">Cadastrar</button>
             </form>
         </div>
     </div>
 </div>
 </body>
+
+<script>
+
+    function alertNotNull(form){
+        let titleCategory = form.titleCategory.value;
+        if (!titleCategory || titleCategory.trim() === "") {
+            alert("Insira o nome da Categoria");
+            return false; // Impede o envio do formulário
+        }
+        return true; // Permite o envio do formulário
+    }
+
+
+</script>
 <%- include('../../partials/footer.ejs') %>

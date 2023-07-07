@@ -13,13 +13,16 @@ router.post("/categoriesnew/save", (req, res) => {
     var titleCategory = req.body.titleCategory
 
     if (titleCategory != undefined){
-    Category.create({title: titleCategory, slug: slugify(titleCategory, {lower:true})})
+    Category.create({title: titleCategory, slug: slugify(titleCategory)})
     .then(() => {
-        res.redirect("/")
+        res.redirect("/categories/home")
     })
     }
-    else {
+    if(titleCategory == ""){
         res.redirect("/admin/categories/new")
+    }
+    else{
+        res.redirect("/categories/home")
     }
 })
 
@@ -60,11 +63,15 @@ router.get("/categories/edit/:id", (req, res) => {
     })
 })
 
-router.post("/categories/update", (req, res) => {
-    let id = req.params.id
+// Router for update EDIT
+router.post("/categories/saveUpdate", (req, res) => {
+    let id = req.body.id
     let title = req.body.title
-
-    Category
+    Category.update({title : title, slug: slugify(title)},{where: {id : id}})
+    .then(() => {
+        console.log(title)
+        res.redirect("/categories/home")
+    })
 })
 
 export default router
