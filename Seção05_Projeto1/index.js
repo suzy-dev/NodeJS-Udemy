@@ -18,6 +18,8 @@ connection
 //app.set -> express use EJS como View engine
 app.set('viw engine','ejs')
 app.use(express.static('public'))
+
+// Body Parser to extract params.body
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
