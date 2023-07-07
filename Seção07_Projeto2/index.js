@@ -17,7 +17,7 @@ app.set('view engine', 'ejs')
 // Static
 app.use(express.static('public'))
 
-// Body Parser 
+// Body Parser - Middlewares 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
