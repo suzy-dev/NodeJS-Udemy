@@ -10,23 +10,24 @@
 
     <table class="table table-bordered">
         <thead>
-            <th>Id</th>
-            <th>Título</th>
-            <th>Slug</th>
-            <th>Ações</th>
+            <th>ID</th>
+            <th>TÍTULO</th>
+            <th>SLUG</th>
+            <th>AÇÕES</th>
         </thead>
         <tbody>
         <tr>
         <% categories.forEach((categories) => { %>
             <th> <%= categories.id %> </th>
-            <th> <%= categories.title %> </th>   
-            <th> <%= categories.slug %> </th> 
+            <th> <%= categories.title.toUpperCase() %> </th>   
+            <th> <%= categories.slug.toLowerCase() %> </th> 
             <th>
+
                 <a href="/categories/edit/<%= categories.id %> " class="btn btn-warning">Editar</a>
 
                 <form style="display: inline;" method="POST" onsubmit="confirmDeletCategory(event, this)" action="/categories/delet">
                     <input type="hidden" name="id" value=" <%= categories.id %> ">
-                    <button class="btn btn-danger">Deletar</button>
+                    <button class="btn btn-danger">Excluir</button>
                 </form>
                 
             </th>     
@@ -45,10 +46,10 @@
     // When the user deteled this confirmation will appear 
     function confirmDeletCategory(event, form){
         event.preventDefault()
-        let yesOrNo = confirm("Você desejar mesmo deletar esta categoria?")
-        if(yesOrNo == true){
-            form.submit()
-        }
+        let yesOrNo = confirm("Deseja mesmo excluir esta categoria?")
+            if(yesOrNo == true){
+                form.submit()
+            }
     }
     
 </script>
