@@ -23,7 +23,7 @@
             <th> <%= categories.slug.toLowerCase() %> </th> 
             <th>
 
-                <a href="/categories/edit/<%= categories.id %> " class="btn btn-warning">Editar</a>
+                <a href="/categories/edit/<%= categories.id %> " style="margin-right: 5px;" class="btn btn-warning">Editar</a>
 
                 <form style="display: inline;" method="POST" onsubmit="confirmDeletCategory(event, this)" action="/categories/delet">
                     <input type="hidden" name="id" value=" <%= categories.id %> ">
