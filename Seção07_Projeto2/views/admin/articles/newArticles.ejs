@@ -12,7 +12,7 @@
             <form action="/admin/articles/new">
                 <input class="form-control" placeholder="Defina o título do artigo" type="text" name="titleArticle">
                 <br>
-                <textarea class="form-control" name="bodyArticle" placeholder="Descreva seu artigo aqui..."></textarea>
+                <textarea class="form-control" name="bodyArticle" placeholder="Descreva seu artigo aqui..." id="article"></textarea>
                 <br>
                 <button class="btn btn-success">Cadastrar</button>
             </form>
@@ -22,3 +22,13 @@
 
 </body>
 <%- include('../../partials/footer.ejs') %>
+
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+
+    tinymce.init({
+        selector: "#article",
+        plugins: ['advlist','lists','image', 'wordcount', 'emoticons', 'autolink']
+    })
+
+</script>
