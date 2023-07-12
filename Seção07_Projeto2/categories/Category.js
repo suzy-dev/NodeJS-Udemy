@@ -4,7 +4,7 @@ import Articles from '../articles/Article.js'
 
 const Category = connection.define('categories',{
     title: {type: Sequelize.STRING, allowNull: false},
-    slug:   {type: Sequelize.STRING, allowNull: false}
+    slug : {type: Sequelize.STRING, allowNull: false}
 })
 
 Category.hasMany(Articles)   // C HasMany A

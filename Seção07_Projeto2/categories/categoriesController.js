@@ -29,7 +29,7 @@ router.post("/categoriesnew/save", (req, res) => {
 // Router list categories home
 router.get("/categories/home", (req, res) => {
     Category.findAll().then((categories) => {
-        res.render("./admin/categories/homeCategories.ejs", {categories: categories})
+        res.render("./admin/categories/homeCategories.ejs", {categories : categories})
     })
 })
 // Router form to DELETE
@@ -69,7 +69,6 @@ router.post("/categories/saveUpdate", (req, res) => {
     let title = req.body.title
     Category.update({title : title, slug: slugify(title)},{where: {id : id}})
     .then(() => {
-        console.log(title)
         res.redirect("/categories/home")
     })
 })

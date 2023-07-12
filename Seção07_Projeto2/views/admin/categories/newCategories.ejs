@@ -22,13 +22,12 @@
 
     function alertNotNull(form){
         let titleCategory = form.titleCategory.value;
-        if (!titleCategory || titleCategory.trim() === "") {
-            alert("Insira o nome da Categoria");
+        if (!titleCategory || !titleCategory.trim() === "") {
+            alert("Insira uma Categoria válida!");
             return false; // Impede o envio do formulário
         }
         return true; // Permite o envio do formulário
     }
-
 
 </script>
 <%- include('../../partials/footer.ejs') %>

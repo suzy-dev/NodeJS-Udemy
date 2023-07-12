@@ -2,7 +2,7 @@ import Sequelize from 'sequelize'
 import connection from '../database/database.js'
 
 const Article = connection.define('articles',{
-    tile: {type: Sequelize.STRING, allowNull: false},
+    title : {type: Sequelize.STRING, allowNull: false},
     body  : {type: Sequelize.TEXT,   allowNull: false},
     slug  : {type: Sequelize.STRING, allowNull: false}
 })
