@@ -1,6 +1,7 @@
 import express from 'express'
 import slugify from 'slugify'
 import Article from './Article.js'
+import Category from '../categories/Category.js'
 const router = express.Router()
 
 router.get("/admin/articles/home", (req, res) => {
@@ -10,16 +11,9 @@ router.get("/admin/articles/home", (req, res) => {
 
 // Router add new Article
 router.get("/admin/articles/new", (req, res) => {
-    // let titleArticle = req.body.titleArticle
-    // let bodyArticle  = req.body.bodyArticle
-
-    // if(titleArticle !== undefined || bodyArticle !== undefined){
-    //     Article.create({titleArticle : titleArticle, bodyArticle : bodyArticle})
-    //     .then(() => {
-    //         res.redirect("/admin/articles/home")
-    //     })
-    // }
-    res.render("./admin/articles/newArticles.ejs")
+    Category.findAll().then((categories) => {
+        res.render("./admin/articles/newArticles.ejs", {categories : categories})
+    })
 })
 
 export default router

@@ -10,11 +10,16 @@
         </div>
         <div class="card-body"> 
             <form action="/admin/articles/new">
-                <input class="form-control" placeholder="Defina o título do artigo" type="text" name="titleArticle">
-                <br>
+                <input class="form-control" placeholder="Defina o título do artigo" type="text" name="titleArticle"><br>
                 <textarea class="form-control" name="bodyArticle" placeholder="Descreva seu artigo aqui..." id="article"></textarea>
-                <br>
+                <h3>Categoria:</h3>
+                <select class="form-control" name="selectCategory">
+                    <% categories.forEach(categories => { %>
+                        <option value=" <%= categories.id %> "> <%= categories.title </option>
+                    <% }) %>
+                </select><br><br>
                 <button class="btn btn-success">Cadastrar</button>
+                <hr>
             </form>
         </div>
     </div>
