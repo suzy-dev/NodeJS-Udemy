@@ -6,7 +6,12 @@ const router = express.Router()
 
 // Router all articles
 router.get("/admin/articles/home", (req, res) => {
-        res.render("./admin/articles/homeArticles.ejs")
+    Article.findAll({
+        where : {}
+    }).then((articles) => {
+        res.render("./admin/articles/homeArticles.ejs", {articles : articles})
+    })
+        
 })
 // Router add new Article
 router.get("/admin/articles/new", (req, res) => {
