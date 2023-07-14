@@ -35,5 +35,5 @@ app.use("/", categoriesController)
 app.use("/", articlesController)
 
 app.listen(porta, () => {
-    console.log(`server opened in localhost:${porta}/`)
+    // console.log(`server opened in localhost:${porta}/`)
 })

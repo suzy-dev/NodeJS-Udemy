@@ -21,9 +21,6 @@ router.post("/categoriesnew/save", (req, res) => {
     if(titleCategory == ""){
         res.redirect("/admin/categories/new")
     }
-    else{
-        res.redirect("/categories/home")
-    }
 })
 
 // Router list categories home
