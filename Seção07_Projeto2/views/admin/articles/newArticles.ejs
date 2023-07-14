@@ -4,20 +4,21 @@
 
 <div class="container">
     <hr>
+    <h1 style="font-family: Arial Narrow, sans-serif;">Novo Artigo</h1>
+    <hr>
     <div class="card">
-        <div class="card-header">
-            <h1>Cadastro de Artigo</h1>
-        </div>
         <div class="card-body"> 
             <form action="/admin/articles/new/save" method="POST">
+                <h2 style="font-family: Arial Narrow, sans-serif;">Título:</h2>
                 <input class="form-control" placeholder="Defina o título do artigo" type="text" name="titleArticle"><br>
-                <textarea class="form-control" name="bodyArticle" placeholder="Descreva seu artigo aqui..." id="article"></textarea>
-                <h3>Categoria:</h3>
+                <h2 style="font-family: Arial Narrow, sans-serif;">Selecione a categoria:</h2>
                 <select class="form-control" name="selectCategory">
                     <% categories.forEach(categories => { %>
                         <option value=" <%= categories.id %> "> <%= categories.title %> </option>
                     <% }) %>
                 </select><br>
+                <textarea class="form-control" name="bodyArticle" placeholder="Descreva seu artigo aqui..." id="article"></textarea>
+                <br>
                 <button class="btn btn-success">Cadastrar</button>
                 <hr>
             </form>

@@ -28,7 +28,13 @@ connection
 .catch((error) => {console.log(error)})
 
 app.get("/", (req, res) => {
-    res.render("index.ejs")
+    Article.findAll().then((articles) => {
+        res.render("index.ejs", {articles : articles})
+    })
+})
+
+app.get("/about", (req, res) => {
+     res.render("aboutPage.ejs") 
 })
 
 app.use("/", categoriesController)

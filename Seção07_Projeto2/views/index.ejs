@@ -7,7 +7,23 @@
     <hr>
 
     
+        
+    
+    <% articles.forEach((articles) => { %>
+    <div class="card">
+        <div class="card-header">
+            <h1> <%= articles.title %> </h1>
+        </div>
+        <div class="card-body">
+            <h4> <%= articles.body %> </h4>
+        </div>
+    </div><br>
+    <% }) %>
+
 </div>
 
 </body>
 <%- include('partials/footer.ejs') %>
+
+
+
