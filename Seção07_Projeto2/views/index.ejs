@@ -19,7 +19,7 @@
                 <% articles.forEach((articles) => { %>
                 <tr>
                     <td><%= articles.id %></td>
-                    <td><%= articles.categoryId %></td>
+                    <td><%= articles.category.title %></td>
                     <td><%= articles.title.toUpperCase() %></td>
                     <td><%= articles.slug.toLowerCase() %></td>
                     <td>Ações</td>
