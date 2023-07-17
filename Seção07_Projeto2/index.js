@@ -28,7 +28,9 @@ connection
 .catch((error) => {console.log(error)})
 
 app.get("/", (req, res) => {
-    Article.findAll().then((articles) => {
+    Article.findAll({
+        include : [{model: Category}]
+    }).then((articles) => {
         res.render("index.ejs", {articles : articles})
     })
 })
