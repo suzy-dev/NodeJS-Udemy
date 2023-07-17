@@ -1,11 +1,18 @@
 <template>
-    <h2>Cliente here</h2>
+    <div>
+        <h2>Componente Cliente</h2>
+        <p>{{ name }}</p>
+    </div>
 </template>
 
 <script>
-    export default {
-        
+export default {
+    data(){
+        return {
+            name: 'Cliente Data binding'
+        }
     }
+}
 </script>
 
 <style scoped> 
