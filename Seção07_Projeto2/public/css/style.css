@@ -6,3 +6,7 @@ body {
     background-color: #111827;
     color: aliceblue;
 }
+
+hr {
+    border-color: rgb(168, 170, 171);
+}
