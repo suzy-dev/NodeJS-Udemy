@@ -32,7 +32,7 @@ router.post("/admin/articles/new/save", (req, res) => {
         categoryId : categoryId,
     })
     .then(() => {
-        res.redirect("/admin/articles/home")
+        res.redirect("/")
     })
     .catch((err) => {
         console.log(err)
