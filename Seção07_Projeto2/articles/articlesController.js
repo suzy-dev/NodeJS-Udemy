@@ -7,7 +7,7 @@ const router = express.Router()
 // Router all articles
 router.get("/admin/articles/home", (req, res) => {
     Article.findAll({
-        where : {}
+        include : [{model: Category}]
     }).then((articles) => {
         res.render("./admin/articles/homeArticles.ejs", {articles : articles})
     })
