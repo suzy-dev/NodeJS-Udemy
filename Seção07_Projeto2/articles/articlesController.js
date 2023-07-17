@@ -24,12 +24,11 @@ router.post("/admin/articles/new/save", (req, res) => {
     let body = req.body.bodyArticle
     let title = req.body.titleArticle
     let categoryId = req.body.selectCategory
-    let slug = req.body.titleArticle
 
     Article.create({
         title : title,
         body  : body, 
-        slug  : slug, 
+        slug  : slugify(title), 
         categoryId : categoryId,
     })
     .then(() => {

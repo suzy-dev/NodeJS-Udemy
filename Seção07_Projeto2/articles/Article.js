@@ -13,6 +13,6 @@ Article.belongsTo(Category)
 
 Article.sync({force: false}).then(() => {
      console.log("Article tabel created!")
- })
+})
 
 export default Article
