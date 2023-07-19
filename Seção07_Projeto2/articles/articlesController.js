@@ -32,10 +32,24 @@ router.post("/admin/articles/new/save", (req, res) => {
         categoryId : categoryId,
     })
     .then(() => {
-        res.redirect("/")
+        res.redirect("/admin/articles/home")
     })
     .catch((err) => {
         console.log(err)
     })
+})
+
+// Router to DELET Article
+router.post("/articles/delet", (req, res) => {
+    let id = req.body.id
+    if(id != undefined){
+        Article.destroy({where: {id : id}})
+        .then(()=>{
+            res.redirect("/admin/articles/home")
+        })
+    }
+    else {
+        res.redirect("/")
+    }
 })
 export default router
