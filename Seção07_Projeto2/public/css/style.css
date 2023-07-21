@@ -22,6 +22,12 @@ hr {
     height: 150px;
 }
 
+.card{
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.card-body{border-bottom-left-radius: 50px;}
+
 h1 {
     font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
 }
