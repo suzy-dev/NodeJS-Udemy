@@ -5,19 +5,19 @@
     <hr>
     <h1>HYPERSTECH | BLOG</h1>
     <hr>
-
-    <% articles.forEach((articles) => { %>
-        <div class="card text-white bg-secondary mb-3 max-width">
-            <div class="card-header">
-                <h1><%= articles.title %></h1>
+    <div class="container-grid">
+        <% articles.forEach((articles) => { %>
+            <div class="card text-white bg-dark" >
+                <div class="card-header">
+                    <h1><%= articles.title %></h1>
+                </div>
+                <div class="card-body bg-secondary">
+                    <a class="btn btn-success">Ler artigo</a>
+                </div>
             </div>
-            <div class="card-body">
-                <a class="btn btn-sucess">Ler aritgo</a>
-            </div>
-        </div>
-    <% }) %>
+        <% }) %>
+    </div>
     
-        
        
 </div>
 

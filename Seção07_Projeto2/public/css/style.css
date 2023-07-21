@@ -10,3 +10,18 @@ body {
 hr {
     border-color: rgb(168, 170, 171);
 }
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.card-header {
+    height: 150px;
+}
+
+h1 {
+    font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+}
