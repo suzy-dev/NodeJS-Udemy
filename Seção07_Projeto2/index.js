@@ -2,7 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import connection from './database/database.js'
 import slugify from 'slugify'
-const porta = 3000
+const porta = 8085
 const app = express()
 
 import articlesController from './articles/articlesController.js'
@@ -43,5 +43,5 @@ app.use("/", categoriesController)
 app.use("/", articlesController)
 
 app.listen(porta, () => {
-    // console.log(`server opened in localhost:${porta}/`)
+ console.log(`server opened in localhost:${porta}/`)
 })
