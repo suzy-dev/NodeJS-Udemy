@@ -7,38 +7,39 @@
 <div class="container">
     <div class="card" style="text-align: center; ">
         <div class="card-header">
-            <h1>RESPOSTAS</h1>  
-            <a href="/home"><button class="btn btn-warning">Página Inicial</button></a>  
+            <h1><%= pergunta.titulo %></h1>    
         </div>  
     </div>
-<br>
+    <br>
     <div class="card">
         <div class="card-body">
             <form method="POST" action="/saverespostas">
                 <label><h4><%= pergunta.titulo %> <br><%= pergunta.descricao %></h4></label>
-<br>
+                <br>
                 <h4>Responda:</h4>
                 <textarea class="form-control" placeholder="Escreva sua resposta aqui..." name="resposta"></textarea>
-<br> 
-                <input type="hidden" name="perguntaId" value="<%= pergunta.id %>"> <!-- hidden n mostra ao usuario -->
+                <br> 
+                <input type="hidden" name="perguntaId" value="<%= pergunta.id %>">
                 <button type="submit" class="btn btn-warning">Responder</button>
-<br>
-<hr>
+                <a href="/home" class="btn btn-warning">Voltar</a>
+                <br>
+                <hr>
                 <h2>RESPOSTA ANTERIORES: </h2>
+                <% if (resposta.length === 0) { %>
+                    <h4>Não há respostas no momento</h4>
+                <% } else { %>
+                    <% resposta.forEach((resposta) => { %>
+                        <br>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4><%= resposta.resposta %></h4>    
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
             </form>
         </div>
     </div>
-<% resposta.forEach((resposta) => { %>
-<br>
-    <div class="card">
-        <div class="card-body">
-            <h4> <%= resposta.resposta %> </h4>    
-        </div>
-        
-    </div>
-
-<% }) %>
-    
 </div>
 
 </body>
