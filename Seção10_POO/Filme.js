@@ -48,4 +48,14 @@ VingadoresUltimato = {
 }
 console.log(VingadoresUltimato)
 
+StarWarsVingancaSith = {
+    titulo: "Star Wars: A vingança dos Sith",
+    ano:  2005,
+    duracaoMin: 120,
+    sinopse: "As Guerras Clônicas estão em pleno andamento e Anakin Skywalker mantém um elo de lealdade com Palpatine",
+    diretor: "George Lucas",
+    genero: ["Ficção Cientifica","Fantasia","Guerra"],
+    elenco: ["hayden chridtensen","ewans mcgregor","ian mcdiarmid"]
+}
+console.log(StarWarsVingancaSith.titulo)
 

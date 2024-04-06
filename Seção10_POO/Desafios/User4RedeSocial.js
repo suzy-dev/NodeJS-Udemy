@@ -12,26 +12,28 @@ class UserInstagram {
     }
 
     PostFeed(file,description){
-        console.log(`${file} - ${description}`)
+        console.log(`${file} - ${description}
+: ${this.user}
+        `)
     }
 
-    SendMessagePrivate(user,to,body){
+    SendMessagePrivate(to,body){
         const CurrentDate = new Date()
 
         console.log(`
             ${CurrentDate}
             Friend: ${to}
-            Message: ${user}: ${body}
+            Message: ${this.user}: ${body}
         `)
     }
 
-    SendMessageGroup(user,toGroup,body){
+    SendMessageGroup(toGroup,body){
         const CurrentDate = new Date()
 
         console.log(`
             ${CurrentDate}
             Group: ${toGroup}
-            Message: ${user}: ${body}
+            Message: ${this.user}: ${body}
         `)
     }
 }
@@ -46,6 +48,7 @@ const user1 = new UserInstagram(
     "Sou uma menina branca de beleza média baixa"
 )
 
-console.log(user1.SendMessagePrivate(user1.user,"lis.brandao","Oi gatinha, tudo bem?"))
+console.log(user1.SendMessagePrivate("lis.brandao","Oi gatinha, tudo bem?"))
+console.log(user1.PostFeed("post.png","Que dia Lindo!"))
 
 // node User4RedeSocial.js

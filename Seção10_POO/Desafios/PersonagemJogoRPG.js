@@ -10,3 +10,6 @@ class ChampionRPG {
 
 const champion = new ChampionRPG()
 console.log(champion)
+
+
+// node PersonagemJogoRPG.js

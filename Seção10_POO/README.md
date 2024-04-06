@@ -20,8 +20,6 @@ Vantagens de usar o Paradigma OO:
 
 Desafios
 -> Prática de classes e abstrações
--> Teste Teste tes
--0-0-0
 
 
 
