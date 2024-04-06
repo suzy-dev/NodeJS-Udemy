@@ -38,11 +38,17 @@ function sendEmail(body, whoSend){
 //     console.log("Erro: " + err)
 // })     // crtl + k + c comentar bloco/descomentar
 
-console.log("iniciando...")
-getId().then((id)=>{
-    searchEmailDatabase(id).then((email)=>{
-        sendEmail("ola como vai",email)
-    }).then(()=>{
-        console.log("email enviado para o usuario id: " + id)
-    }).catch(err => console.log(err))
-})
+// console.log("iniciando...")
+// getId().then((id)=>{
+//     searchEmailDatabase(id).then((email)=>{
+//         sendEmail("ola como vai",email)
+//     }).then(()=>{
+//         console.log("email enviado para o usuario id: " + id)
+//     }).catch(err => console.log(err))
+// })
+
+async function main(){
+    let id = await getId()
+    let email = await searchEmailDatabase(id)
+    searchEmailDatabase("Prezados, boa tarde..",email)
+}
